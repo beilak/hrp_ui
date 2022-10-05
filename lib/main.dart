@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hrp_ui/org/org_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,17 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      body: ElevatedButton.icon(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return const OrgPage(title: 'Org');
+            },
+          ));
+        },
+        label: const Text('Org'),
+        icon: const Icon(Icons.family_restroom, size: 18),
+      ),
     );
   }
 }
